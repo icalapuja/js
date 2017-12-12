@@ -1,0 +1,92 @@
+/*!
+ * Simple DataGrid v0.1.0
+ * Copyright 2017 @icalapuja
+ * Licensed under MIT (https://github.com/icalapuja/datagrid)
+ */
+ 
+.datagrid{
+	border: solid 1px gray;
+	border-collapse: collapse;
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+.datagrid *{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.datagrid thead{
+	background-color: lightgray;
+}
+
+.datagrid th
+,.datagrid td{
+	border: solid 1px gray;
+	text-align: center;
+}
+
+.datagrid tbody tr:hover{
+	opacity: .8;
+}
+
+.datagrid .datagrid-nav{
+	position: relative;
+	display: table;
+	width: 300px;
+	margin: auto;
+	text-align: center;
+}
+
+.datagrid .datagrid-nav label
+,.datagrid .datagrid-nav .datagrid-pages{
+	margin: 2px;
+	position: relative;
+	top: 4px;
+}
+
+.datagrid .datagrid-nav .datagrid-nav-prev
+,.datagrid .datagrid-nav .datagrid-nav-first{
+	margin: 4px;
+	font-size: 0px;
+	max-height: 10px;
+	background: transparent;
+	border: none;
+	border-right: solid 15px gray;
+	border-top: solid 8px transparent;
+	border-bottom: solid 8px transparent;
+}
+
+.datagrid .datagrid-nav .datagrid-nav-next
+,.datagrid .datagrid-nav .datagrid-nav-last{
+	margin: 4px;
+	font-size: 0px;
+	max-height: 10px;
+	background: transparent;
+	border: none;
+	border-left: solid 15px gray;
+	border-top: solid 8px transparent;
+	border-bottom: solid 8px transparent;
+}
+
+.datagrid .datagrid-nav .datagrid-nav-first{
+	border-left: solid 2px gray;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 3px;
+}
+
+.datagrid .datagrid-nav .datagrid-nav-last{
+	border-right: solid 2px gray;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 3px;
+}
+
+
+.datagrid .datagrid-nav .datagrid-nav-prev:hover
+,.datagrid .datagrid-nav .datagrid-nav-first:hover
+,.datagrid .datagrid-nav .datagrid-nav-next:hover
+,.datagrid .datagrid-nav .datagrid-nav-last:hover{
+	opacity: .7;
+}

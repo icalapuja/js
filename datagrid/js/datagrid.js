@@ -119,7 +119,10 @@
 			var end = option.attr("data-end");
 			var html = _bodyContent(_records(these._params.data,start,end));
 			$(these).find(".datagrid-tbody").html(html);
-			these._params.load(these);
+
+			if(these._params.load != undefined){
+				these._params.load(these);
+			}
 		});
 
 		$(these).find(".datagrid-nav-first").click(function(e){
@@ -171,7 +174,10 @@
 				$(these).html(html);
 
 				// events
-				these._params.load(these);
+				if(these._params.load != undefined){
+					these._params.load(these);
+				}
+				
 				_navigation(these);
 			}
 		}

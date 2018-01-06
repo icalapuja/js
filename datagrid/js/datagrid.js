@@ -22,7 +22,9 @@
 		for(var i in data){
 			n++;
 			if(n>=start && n<=end){
-				records.push(data[i]);
+				if(typeof data[i] !== 'function'){
+					records.push(data[i]);
+				}
 			}
 		}
 
@@ -40,7 +42,9 @@
 		var html = "<thead><tr>";
 		
 		for(var i in these._params.columns){
-			html+="<th>"+these._params.columns[i]+"</th>";
+			if(typeof these._params.columns[i] !== 'function'){
+				html+="<th>"+these._params.columns[i]+"</th>";
+			}
 		}
 
 		html+="</tr></thead>";
@@ -57,12 +61,16 @@
 
 		if(records.length > 0){
 			for(var i in records){
-				var record = records[i];
-				html+="<tr>";
-				for(var j in record){
-					html+="<td>"+record[j]+"</td>";
+				if(typeof records[i] !== 'function'){
+					var record = records[i];
+					html+="<tr>";
+					for(var j in record){
+						if(typeof record[j] !== 'function'){
+							html+="<td>"+record[j]+"</td>";
+						}
+					}
+					html+="</tr>";
 				}
-				html+="</tr>";
 			}
 		}
 
